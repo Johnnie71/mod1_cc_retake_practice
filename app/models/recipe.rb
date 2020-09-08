@@ -23,6 +23,21 @@
         self.menu_items.map { |item| item.restaurant }
     end
 
+    def average_price
+        self.menu_items.collect { |item| item.price }.sum / self.menu_items.length
+    end
+
+    def highest_price
+        self.menu_items.collect{ |item| item.price }.max
+    end
+
+    def cheapest_restaurant
+        self.menu_items.min_by { |item| item.price }.restaurant  
+    end
+
+    def self.inactive
+        self.all.select { |item| item.restaurants == [] }
+    end
 
     
  end
