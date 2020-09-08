@@ -17,4 +17,14 @@ class RestaurantOwner
         @@all
     end
 
+    def restaurants
+        Restaurant.all.select { |rest| rest.owner == self }
+    end
+
+    def menu_items
+        MenuItem.all.select { |item| item.restaurant.owner == self }
+    end
+
+    
+
 end

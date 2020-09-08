@@ -18,6 +18,12 @@ class MenuItem
         @@all
     end
 
+    def owner
+        self.restaurant.owner
+    end
+
+
+
    
 
 end
